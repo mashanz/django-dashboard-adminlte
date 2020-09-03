@@ -63,3 +63,15 @@ def ini_current_datetime(request):
 
 def web_index(request):
     return render(request, "web/index.html", {"page_title": "Profile"})
+
+
+def web_line_follower(request):
+    return render(request, "web/index.html", {"page_title": "Line Follower"})
+
+
+def web_manipulator(request):
+    return render(request, "web/index.html", {"page_title": "Manipulator"})
+
+
+def web_humanoid(request):
+    return render(request, "web/index.html", {"page_title": "Humanoid"})

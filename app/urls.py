@@ -13,6 +13,9 @@ urlpatterns = [
     path('api', views.ini_api),
     path('date', views.ini_current_datetime),
     path('', views.web_index),
+    path('line_follower', views.web_line_follower),
+    path('manipulator', views.web_manipulator),
+    path('humanoid', views.web_humanoid),
     # Matches any html file
     re_path(r'^.*\.*', views.pages, name='pages'),
 
