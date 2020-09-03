@@ -62,4 +62,4 @@ def ini_current_datetime(request):
 
 
 def web_index(request):
-    return render(request, "web/index.html", {})
+    return render(request, "web/index.html", {"page_title": "Profile"})
