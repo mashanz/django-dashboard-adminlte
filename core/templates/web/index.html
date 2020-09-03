@@ -14,6 +14,24 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="/static/assets/css/adminlte.min.css">
 
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/railscasts.min.css">
+
+    <style>
+  pre {
+      margin-top:-20px;
+      margin-left:-39px;
+      margin-right:-40px;
+      margin-bottom:-40px;
+  }
+
+  .col-12 .card .card-body pre {
+      margin-left:-32px;
+      margin-right:-32px;
+      margin-top:-20px;
+      margin-bottom:-40px;
+  }
+  </style>
+
 {% endblock stylesheets %}
 
 {% block content %}  
@@ -31,37 +49,7 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
-
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-
-            <!-- Default box -->
-            <div class="card">
-              
-              <div class="card-header">
-                <h3 class="card-title">Title</h3>
-              </div>
-
-              <div class="card-body">
-                Start creating your amazing application!
-              </div>
-              <!-- /.card-body -->
-
-              <div class="card-footer">
-                Footer
-              </div>
-
-              <!-- /.card-footer-->
-            </div>
-            <!-- /.card -->
-            
-          </div>
-        </div>
-      </div>
-
-    </section>
+    {% include main_content %}
     <!-- /.content -->
   </div>
 
@@ -80,5 +68,9 @@
   <script src="/static/assets/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="/static/assets/js/demo.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
+
+  <script>hljs.initHighlightingOnLoad();</script>
 
 {% endblock javascripts %}

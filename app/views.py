@@ -62,16 +62,82 @@ def ini_current_datetime(request):
 
 
 def web_index(request):
-    return render(request, "web/index.html", {"page_title": "Profile"})
+    page_title = "Profile"
+    main_content = "web/profile.html"
+    name = "Hanjara CA"
+    email = "mangatkk@gmail.com"
+    link_instagram = "https://instagram.com/handhyatma"
+    link_google = ""
+    link_github = "https://github.com/mashanz"
+    education = "B.E. in Computer Engineering from Telkom University"
+    location = "Singapore"
+    notes = "Let's do the best!"
+    return render(
+        request,
+        "web/index.html",
+        {
+            "page_title": page_title,
+            "main_content": main_content,
+            "name": name,
+            "email": email,
+            "link_instagram": link_instagram,
+            "link_github": link_github,
+            "link_google": link_google,
+            "education": education,
+            "location": location,
+            "notes": notes
+
+        }
+    )
 
 
 def web_line_follower(request):
-    return render(request, "web/index.html", {"page_title": "Line Follower"})
+    page_title = "Line Follower"
+    main_content = "web/line_follower.html"
+    return render(
+        request,
+        "web/index.html",
+        {
+            "page_title": page_title,
+            "main_content": main_content
+        }
+    )
 
 
 def web_manipulator(request):
-    return render(request, "web/index.html", {"page_title": "Manipulator"})
+    page_title = "Manipulator"
+    main_content = "web/blank.html"
+    return render(
+        request,
+        "web/index.html",
+        {
+            "page_title": page_title,
+            "main_content": main_content
+        }
+    )
 
 
 def web_humanoid(request):
-    return render(request, "web/index.html", {"page_title": "Humanoid"})
+    page_title = "Humanoid"
+    main_content = "web/blank.html"
+    return render(
+        request,
+        "web/index.html",
+        {
+            "page_title": page_title,
+            "main_content": main_content
+        }
+    )
+
+
+def web_about_this_page(request):
+    page_title = "About This Page"
+    main_content = "web/about_this_page.html"
+    return render(
+        request,
+        "web/index.html",
+        {
+            "page_title": page_title,
+            "main_content": main_content
+        }
+    )

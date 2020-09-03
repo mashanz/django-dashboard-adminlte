@@ -16,6 +16,7 @@ urlpatterns = [
     path('line_follower', views.web_line_follower),
     path('manipulator', views.web_manipulator),
     path('humanoid', views.web_humanoid),
+    path('about_this_page', views.web_about_this_page),
     # Matches any html file
     re_path(r'^.*\.*', views.pages, name='pages'),
 
