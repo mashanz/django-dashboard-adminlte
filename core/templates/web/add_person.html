@@ -23,6 +23,7 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>Size</th>
+                                    <th width="15%">Settings</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -30,6 +31,11 @@
                                 <tr>
                                     <td>{{ p.full_name }}</td>
                                     <td>{{ p.shirt_size }}</td>
+                                    <td style="text-align:center">
+                                        <button class="btn btn-primary"><i class="fas fa-eye"></i></button>
+                                        <button class="btn btn-success"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                    </td>
                                 </tr>
                             {% endfor %}
                             </tbody>
