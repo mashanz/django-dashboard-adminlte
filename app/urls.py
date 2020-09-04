@@ -22,6 +22,7 @@ urlpatterns = [
 
     # Unrivalry App
     path('unrivalry_add_person', main_view.unrivalry_add_person),
+    path('unrivalry_delete_person', main_view.unrivalry_delete_person),
 
     # Test
     path('test_api', test_view.test_api),

@@ -76,18 +76,12 @@ def web_index(request):
     technical_languages = ['Python', 'SQL', 'C',
                            'C++', 'C#', 'Flutter',
                            'Java', 'JavaScript', 'Kotlin',
-                           'HTML', 'XML', 'PHP', 'JSON']
-    html_technical_languages = ''
+                           'HTML', 'XML', 'PHP', 'JSON', 'VHDL', 'Verilog']
     frameworks_tools = [
         'Django', 'Odoo', 'Laravel', 'GCP',
         'AWS', 'Android Studio', 'OpenCV', 'Tensor FLow',
         'Arduino', 'RaspberryPi', 'RestAPI',
-        'Linux', 'MacOs', 'Windows', 'Android']
-    html_frameworks_tools = ''
-    for f in frameworks_tools:
-        html_frameworks_tools += f'<span class="badge badge-primary">{f}</span> '
-    for f in technical_languages:
-        html_technical_languages += f'<span class="badge badge-primary">{f}</span> '
+        'Linux', 'MacOs', 'Windows', 'Android', 'Xilinx']
     return render(
         request,
         "web/index.html",
@@ -104,8 +98,8 @@ def web_index(request):
             "notes": notes,
             "year": now.year,
             "version": version,
-            "frameworks_tools": mark_safe(html_frameworks_tools),
-            "technical_languages": mark_safe(html_technical_languages)
+            "frameworks_tools": frameworks_tools,
+            "technical_languages": technical_languages
         }
     )
 

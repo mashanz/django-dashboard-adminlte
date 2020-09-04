@@ -60,13 +60,17 @@
 
                 <strong><i class="fas fa-code mr-1"></i> Technical Language</strong>
                 <p class="text-muted">
-                  {{technical_languages}}
+                  {% for tl in technical_languages %}
+                    <span class="badge badge-primary">{{tl}}</span>
+                  {% endfor %}
                 </p>
                 <hr>
 
                 <strong><i class="fas fa-tools mr-1"></i> Frameworks/Tools</strong>
                 <p class="text-muted">
-                  {{frameworks_tools}}
+                  {% for ft in frameworks_tools %}
+                    <span class="badge badge-primary">{{ft}}</span>
+                  {% endfor %}
                 </p>
                 <hr>
 

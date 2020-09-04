@@ -50,6 +50,11 @@ def unrivalry_add_person(request):
     )
 
 
+def unrivalry_delete_person(request):
+    if request.POST:
+        pass
+
+
 def unrivalry_api(request):
     print("OH")
     x = [1, 4, 2, 5, 7, 8, 6, 3, 8, 7, 9, 8, 0]
