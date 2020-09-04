@@ -17,14 +17,23 @@
                                 <button type="submit" name="submit" class="btn btn-primary btn-block">Submit</button>
                             </div>
                         </form>
-
-                        {% comment %} {% for r in request %}
-                            TEST: {{ r }}<br>
-                        {% endfor %} {% endcomment %}
-
-                        {% for p in person %}
-                            <p>Person: {{ p.full_name }}<br>Person: {{ p.shirt_size }}</p>
-                        {% endfor %}
+                        <br>
+                        <table id="table_style" class="table table-bordered table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Size</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for p in person %}
+                                <tr>
+                                    <td>{{ p.full_name }}</td>
+                                    <td>{{ p.shirt_size }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
 
                     </div>
                 </div>
