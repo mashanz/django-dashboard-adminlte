@@ -1,16 +1,33 @@
 from django import forms
+from .models import PersonModel
 
 
-class AddPersonForm(forms.Form):
-    full_name = forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                "placeholder": "Full Name",
-                "class": "form-control"
-            }
-        )
-    )
+class AddPersonForm(forms.ModelForm):
 
-    shirt_size = forms.CharField(
-        widget=forms.ChoiceField()
-    )
+    # SHIRT_SIZES = (
+    #     ('S', 'Small'),
+    #     ('M', 'Medium'),
+    #     ('L', 'Large'),
+    # )
+
+    # full_name = forms.CharField(
+    #     widget=forms.TextInput(
+    #         attrs={
+    #             "placeholder": "Full Name",
+    #             "class": "form-control"
+    #         }
+    #     )
+    # )
+
+    # shirt_size = forms.CharField(
+    #     widget=forms.TextInput(
+    #         attrs={
+    #             "placeholder": "Full Name",
+    #             "class": "form-control"
+    #         }
+    #     )
+    # )
+
+    class Meta:
+        model = PersonModel
+        fields = ('full_name', 'shirt_size')
