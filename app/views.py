@@ -8,6 +8,10 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.template import loader
 from django.http import HttpResponse, JsonResponse
 from django import template
+from django.utils.safestring import mark_safe
+import datetime
+now = datetime.datetime.now()
+version = "1.0.0"
 
 
 @login_required(login_url="/login/")
@@ -21,18 +25,15 @@ def pages(request):
     # All resource paths end in .html.
     # Pick out the html file name from the url. And load that template.
     try:
-
         load_template = request.path.split('/')[-1]
         html_template = loader.get_template(load_template)
         return HttpResponse(html_template.render(context, request))
 
     except template.TemplateDoesNotExist:
-
         html_template = loader.get_template('page-404.html')
         return HttpResponse(html_template.render(context, request))
 
     except:
-
         html_template = loader.get_template('page-500.html')
         return HttpResponse(html_template.render(context, request))
 
@@ -72,6 +73,21 @@ def web_index(request):
     education = "B.E. in Computer Engineering from Telkom University"
     location = "Singapore"
     notes = "Let's do the best!"
+    technical_languages = ['Python', 'SQL', 'C',
+                           'C++', 'C#', 'Flutter',
+                           'Java', 'JavaScript', 'Kotlin',
+                           'HTML', 'XML', 'PHP', 'JSON']
+    html_technical_languages = ''
+    frameworks_tools = [
+        'Django', 'Odoo', 'Laravel', 'GCP',
+        'AWS', 'Android Studio', 'OpenCV', 'Tensor FLow',
+        'Arduino', 'RaspberryPi', 'RestAPI',
+        'Linux', 'MacOs', 'Windows', 'Android']
+    html_frameworks_tools = ''
+    for f in frameworks_tools:
+        html_frameworks_tools += f'<span class="badge badge-primary">{f}</span> '
+    for f in technical_languages:
+        html_technical_languages += f'<span class="badge badge-primary">{f}</span> '
     return render(
         request,
         "web/index.html",
@@ -85,8 +101,11 @@ def web_index(request):
             "link_google": link_google,
             "education": education,
             "location": location,
-            "notes": notes
-
+            "notes": notes,
+            "year": now.year,
+            "version": version,
+            "frameworks_tools": mark_safe(html_frameworks_tools),
+            "technical_languages": mark_safe(html_technical_languages)
         }
     )
 
@@ -99,7 +118,9 @@ def web_line_follower(request):
         "web/index.html",
         {
             "page_title": page_title,
-            "main_content": main_content
+            "main_content": main_content,
+            "year": now.year,
+            "version": version
         }
     )
 
@@ -112,7 +133,9 @@ def web_manipulator(request):
         "web/index.html",
         {
             "page_title": page_title,
-            "main_content": main_content
+            "main_content": main_content,
+            "year": now.year,
+            "version": version
         }
     )
 
@@ -125,7 +148,9 @@ def web_humanoid(request):
         "web/index.html",
         {
             "page_title": page_title,
-            "main_content": main_content
+            "main_content": main_content,
+            "year": now.year,
+            "version": version
         }
     )
 
@@ -138,6 +163,8 @@ def web_about_this_page(request):
         "web/index.html",
         {
             "page_title": page_title,
-            "main_content": main_content
+            "main_content": main_content,
+            "year": now.year,
+            "version": version
         }
     )
